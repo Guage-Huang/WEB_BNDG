@@ -1,0 +1,436 @@
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #999;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #999;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #999;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #999;
+}
+
+
+
+img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.navig-fixed{position: fixed; right: .3rem; bottom:20%; z-index: 999;}
+.navig-fixed_box{position: relative; width: .9rem; height: .9rem; }
+.navig-btn{width:.9rem; height: .9rem; border-radius: 50%; background:#ff8712;  color: white; text-align: center; line-height: .9rem;  display:block; }
+.navig-btn i{
+    font-size:.6rem;
+}
+.weui-btn_primary:not(.weui-btn_disabled):active{
+    background-color: #ffbb78;
+}
+
+.weui-btn_primary.weui-btn_disabled{
+    background-color: #ffbb78;
+}
+
+
+.weui-cells-form__title{
+    padding: .3rem .2rem;
+    font-size:.3rem;
+    color:#333;
+    font-weight:bold;
+}
+.weui-cells{
+    margin-top:0 !important;
+    font-size:.28rem !important;
+}
+.weui-cell__icon{
+    width:.4rem;
+    height:.4rem;
+    text-align:center;
+    line-height: .4rem;
+    margin-right:.2rem;
+}
+
+.weui-cell__icon i {
+    font-size:.4rem;
+}
+.weui-label{
+    width:auto !important;
+    font-size:.28rem;
+    color:#333;
+    margin-right:10px;
+}
+.weui-cells-form__title~.weui-cells>.weui-cell{
+    padding-left:40px;
+}
+.weui-cells-form__title~.weui-cells>.weui-cell::before{
+    left:40px;
+}
+
+.weui-cells-form__title~.weui-cells .weui-textarea{
+    padding:.2rem;
+    background-color:#f6f6f6;
+    box-sizing: border-box;
+}
+
+
+.weui-cell__title{
+    padding-bottom:0;
+}
+.weui-cell__choose{
+    padding-top:0;
+    padding-left:70px !important;
+}
+.skill-item{
+    display: inline-block;
+    vertical-align: top;
+    height: .6rem;
+    line-height: .6rem;
+    text-align: center;
+    font-size: .26rem;
+    padding: 0 .18rem;
+    box-sizing: border-box;
+    /* box-shadow: 0 0 5px #999999;*/
+    /*border:1px solid #dddddd;*/
+    border-radius: 5px;
+    background:white;
+    margin-right: .14rem;
+    margin-top: .2rem;
+    overflow: hidden;
+}
+.skill-item.border::before{
+border-radius: 10px;
+}
+
+.skill-item.active{
+    background-color:#ff8712;
+    color:white;
+}
+.skill-item.active.border::before{
+    border-color:#ff8712;
+}
+
+.work-item{
+    margin-top:.2rem;
+}
+.radio-icon{
+    width:.38rem;
+    height:.38rem;
+    border:1px solid #ffcc00;
+    border-radius: 50%;
+    box-sizing:border-box;
+    margin-right:10px;
+}
+.work-item.active .radio-icon,
+.processd-box__item.active .radio-icon{
+    background-color:#ffcc00;
+    background-image:url('../images/icon/success-gou.png');
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:70%;
+}
+
+.processd-box__item .radio-icon{
+    border-color:#ddd;
+}
+
+.processd-box__item.active .radio-icon{
+    background-color:#E62129;
+    border-color:#E62129;
+}
+
+.radio-icon.active{
+    background-color:#ffcc00;
+    background-image:url('../images/icon/success-gou.png');
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:70%;
+}
+.weui-cells-primary{
+    padding:.4rem 25%;
+    background-color:white;
+}
+
+.weui-cells-primary.bg-none{
+    background-color:initial;
+}
+
+.weui-btn:after{
+    border:none;
+}
+.weui-btn_primary{
+    background-color:#ff8712;
+}
+.learn-title{
+    background:white;
+    padding:.3rem .2rem .1rem .8rem;
+    position:relative;
+    font-size:14px;
+    overflow:hidden;
+}
+.skill-items_two{
+    text-align: center;
+    margin-right: -10%;
+}
+.skill-items_two .skill-item{
+    min-width: 30%;
+    margin-right: 10%;
+}
+.skill-double_election .skill-item{
+    border:none;
+    padding:0;
+}
+.box {
+    padding:0 .18rem;
+    border-radius:5px;
+}
+.skill-active{
+    background-color:#ff8712;
+    color:white;
+}
+
+.weui-cell__input input{
+    border-bottom:1px solid #333333;
+    text-align: center;
+}
+
+.weui-cell__input .vux-popup-picker-select{
+    border-bottom:1px solid #333333;
+    width:auto;
+    padding:0 .2rem;
+    height: .5rem;
+    line-height: .5rem;
+    max-width: 3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.weui-cell__input .weui-cell_access .weui-cell__ft{
+    display: none;
+}
+
+
+.skill-items_four {
+    margin-right:-3%;
+}
+
+.skill-items_four .skill-item {
+    min-width:21%;
+    margin-right:3%;
+}
+
+.weui-cell_access:active{
+    background-color:initial;
+}
+
+.weui-cell .vux-datetime.weui-cell{
+    padding:0;
+}
+
+.weui-cell_access .weui-cell__ft:after{
+    content: " ";
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    border-width: 1px 1px 0 0;
+    border-color: #333;
+    border-style: solid;
+    -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+            transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    position: relative;
+    top: -2px;
+    position: absolute;
+    top: 50%;
+    margin-top: -5px;
+    right: 2px;
+}
+
+.weui-cell .vux-datetime-value{
+    text-align: left;
+    color:#333;
+    font-size: .28rem;
+}
+
+.weui-cell .vux-cell-value{
+    color:#333;
+}
+
+.weui-cell.shield .vux-cell-value{
+    color:#999 !important;
+}
+
+.weui-cell .vux-x-input.weui-cell,
+.weui-cell .vux-tap-active.weui-cell{
+    padding:0;
+}
+
+
+.vux-popup-header-right{
+    color:#ff8712 !important;
+}
+
+
+.weui-uploader__file,
+.weui-uploader__input-box{
+    width:1.3rem;
+    height:1.3rem;
+}
+
+.weui-uploader__input-box:after, 
+.weui-uploader__input-box:before{
+    display: none;
+}
+
+.weui-uploader__input-box i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width:25px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    font-size: 26px;
+    color:#999;
+}
+
+.weui-uploader__file{
+    position: relative;
+}
+
+.weui-uploader__file i{
+    position: absolute;
+    left: 50%;
+    bottom: .06rem;
+    margin-left: -.18rem;
+    width:.4rem;
+    height: .4rem;
+    text-align: center;
+    line-height: .4rem;
+    font-size: .34rem;
+}
+
+
+.weui-form__address{
+    color:#333;
+}
+
+.weui-cell__title~.weui-cell.weui-cell__choose{
+    padding-top:0;
+}
+
+.weui-cell .weui-cell.vux-x-textarea{
+    padding:0;
+}
+
+.x-textarea-none .vux-x-textarea .weui-textarea{
+    padding: 0;
+    background:white;
+}
+
+.screen_slide .weui-cell.vux-tap-active{
+    padding-right:0;
+}
+
+.release-address{
+    position:relative;
+    padding-left:20px;
+}
+.release-address i{
+    position: absolute;
+    left:0;
+    top:-2px;
+}
+
+
+
+
+.weui-search-bar{
+    background-color:white !important;
+}
+
+.vux-search-fixed{
+    z-index:101 !important;
+}
+
+.vux-search-mask{
+    width:100% !important;
+}
+
+.weui-search-bar__box,
+.weui-search-bar__label,
+.weui-search-bar__form{
+    border-radius: 33px !important;
+    background: #f5f5f5 !important;
+}
+
+.weui-search-bar__label{
+    line-height:30px !important;
+}
+
+.weui-search-bar__form:after{
+    display: none;
+}
+
+.weui-search-bar__box{
+    border-radius: 33px !important;
+    padding-left:40px !important;
+    padding-right: 40px !important;
+}
+
+
+
+.weui-search-bar__box .weui-search-bar__input{
+    height: 25px !important;
+    line-height: normal !important;
+}
+
+.weui-search-bar__cancel-btn{
+    line-height: 33px !important;
+    color:#ff8712 !important;
+}
+
+
+.address-book .weui-search-bar:before{
+    border-top:none;
+}
+
+.weui-search-bar__box .weui-icon-search,
+.weui-search-bar__box .weui-icon-clear{
+    line-height: 33px !important;
+    color:#999;
+    font-size:16px;
+    
+}
+
+.weui-search-bar__label .weui-icon-search{
+    margin-right:0 !important;
+}
+
+.bottom-form-btn{
+    height: .9rem;
+}
+
+.bottom-form-btn .weui-btn{
+    line-height: .9rem;
+    border-radius: 0;
+}
+
+.weui-cell_vcode{
+    padding-top: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.weui-vcode-btn{
+    font-size: 14px !important;
+    font-family: Arial, "Microsoft Yahei", "Helvetica Neue", Helvetica, sans-serif;
+    color: #ff8712;
+    height: .8rem !important;
+    line-height: .8rem !important;
+}
+
