@@ -103,7 +103,7 @@
                     </div>
                 </div>
             </div>
-            <div class="cell">
+            <!-- <div class="cell">
                 <div class="weui-cells not-border-cells weui-cells-bg_none" @click="handleCellContentToggle('industrySkills')">
                     <div class="weui-cell weui-cell_access" :class="{access_down:toggle.industrySkillsToggle}">
                         <div class="weui-cell__hd">
@@ -162,7 +162,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="cell">
                 <div class="weui-cells not-border-cells weui-cells-bg_none">
                     <router-link class="weui-cell weui-cell_access" to="/nearby/detail/project">

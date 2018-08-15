@@ -14,6 +14,7 @@
                                 <div class="weui-flex__item">
                                     <div class="user-name">
                                         李师傅
+                                        <span class="cl_b9 f12">电工</span>
                                         <span class="label ml10">实名</span>
                                     </div>
                                 </div>
@@ -55,24 +56,13 @@
                                 <span class="f12 cl_b9 mr10">项目：3单</span>
                                 <span class="f12 cl_b9 mr10">活动：0次</span>
                             </div>
-                            <div class="weui-flex mt5">
-                                <div class="weui-flex__hd">
-                                    <span class="f12 cl_b9">擅长项目：</span>
-                                </div>
-                                <div class="weui-flex__item">
-                                    <div>
-                                        <span class="f12 cl_b9 mr5">家庭用电</span>
-                                        <span class="f12 cl_b9 mr5">装修行业</span>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </router-link>
                 <div class="user-btns">
                     <div class="weui-flex">
                         <div class="btn apply-friends">
-                            <span>+为好友</span>
+                            <span>+邀请</span>
                         </div>
                         <div class="btn apply-focus">
                             <span class="success">关注Ta</span>
@@ -109,6 +99,9 @@
 
 <style lang="stylus" scoped>
 
+    .user-items{
+        padding-bottom: 20px;
+    }
     .user-item
         position: relative;
         border-bottom: 1px solid #ededed;

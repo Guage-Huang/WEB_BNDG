@@ -1,11 +1,38 @@
 <template>
-  <div class="spinner">
-    <div class="dot1"></div>
-    <div class="dot2"></div>
+  <div class="loading" v-show="isToggle">
+    <div class="spinner">
+      <div class="dot1"></div>
+      <div class="dot2"></div>
+    </div>
   </div>
 </template>
 
+
+<script>
+  export default {
+      name:'loading',
+      props:{
+        toggle:Boolean,
+      },
+      computed:{
+        isToggle(){
+            return this.toggle
+        }
+      }
+  }
+</script>
+
+
 <style lang="stylus" scoped>
+.loading{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: white;
+    z-index: 9999;
+}
 .spinner {
   position: absolute;
   left: 50%;

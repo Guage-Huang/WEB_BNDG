@@ -1,14 +1,13 @@
 <template>
   <div id="app" class="app">
-    
-    <!-- <loading></loading> -->
+    <loading :toggle="isLoading"></loading>
     <transition :name="transitionName" :mode="transitionMode">
       <keep-alive>
-        <router-view class="child-view" :style="{bottom:tabbarShow?'50px':'0'}" v-if="$route.meta.isKeepAlive" ref="childView"/>
+        <router-view class="child-view" :style="{bottom:tabbarShow?'53px':'0'}" v-if="$route.meta.isKeepAlive" ref="childView"/>
       </keep-alive>
     </transition>
     <transition :name="transitionName" :mode="transitionMode">
-      <router-view class="child-view" :style="{bottom:tabbarShow?'50px':'0'}" v-if="!$route.meta.isKeepAlive" ref="childView"/>
+      <router-view class="child-view" :style="{bottom:tabbarShow?'53px':'0'}" v-if="!$route.meta.isKeepAlive" ref="childView"/>
     </transition>
     <common-tabbar v-show="tabbarShow" :tabbarActive="routeIndex"></common-tabbar>
     
@@ -16,17 +15,24 @@
 </template>
 
 <script>
-
-  import loading from './common/loading/loading'
+  let mapKey = 'NJQBZ-SBJWP-M6NDF-LH45A-YZ2Y6-BUBY3'
+  let mapName = 'txmapforchuwaifung'
+  window.geolocation = new qq.maps.Geolocation(mapKey,mapName)
+  window.geolocationOpation = {failTipFlag: true}
+  
+  import { mapState } from 'vuex'
+  import Loading from './common/loading/loading'
   import CommonTabbar from './common/tabbar/Tabbar'
+
   export default {
     name: 'App',
     components:{
-      loading,
       CommonTabbar,
+      Loading
     },
     data(){
       return {
+          //isLoading:true,
           transitionMode:'out-in',
           transitionName:'slide-left',
           tabbarShow:true,
@@ -36,11 +42,14 @@
     mounted(){
         this.monitorRouteMeta()
     },
+    computed:{
+      ...mapState(['isLoading'])
+    },
     //监听路由的路径，可以通过不同的路径去选择不同的切换效果 
     watch: {
     　　'$route' (to, from) {
           this.monitorRouteMeta(to,from)
-  　　　}
+  　　　},
     },
     methods:{
         monitorRouteMeta(to,from){
@@ -51,8 +60,17 @@
               const toDepth = to.path.split('/').length
               const fromDepth = from.path.split('/').length
               this.transitionMode = 'in-out'
-              this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
 
+              if(to.path ==  '/clause')  {
+                  this.transitionName = 'slide-left'
+                  return;
+              }
+              if(from.path ==  '/clause'){
+                this.transitionName = 'slide-right'
+                  return;
+              }
+   
+              this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
             }catch(e){
               console.log(e)
             }
@@ -62,10 +80,9 @@
               this.transitionName = 'fade'
               this.routeIndex = this.$route.meta.index
           }
-        }
+        },
     }
   }
-
 </script>
 
 <style lang="stylus">
@@ -100,14 +117,11 @@
     top:0;
     right:0;
     bottom:0;
+    z-index: 999;
     background: #f5f5f5;
     -webkit-transition:opacity .3s ease-out, -webkit-transform .38s ease-in-out;
     transition: opacity .3s ease-out, transform .38s ease-in-out;
-
-
   }
-
-
 
   .slide-left-enter, .slide-right-leave-active {
     opacity: 0;

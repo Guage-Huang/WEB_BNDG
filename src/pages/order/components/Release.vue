@@ -21,8 +21,6 @@
                                         <span class="cl_b9 ml10">已截止</span>
                                     </div>
                                 </div>
-                                
-
                                 <div class="weui-flex mt10">
                                     <div class="weui-flex__item">
                                         <span class="release-span">{{item.date}}</span>
@@ -79,6 +77,7 @@
 <style lang="stylus" scoped>
     .release-list
         padding-top: 25px;
+        padding-bottom: 1px;
         li
             margin-bottom:25px;
             a

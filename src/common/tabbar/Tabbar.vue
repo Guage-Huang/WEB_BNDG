@@ -3,19 +3,16 @@
         <div class="stance"></div>
         <div class="weui-tabbar">
             <div class="weui-tabbar__item" :class="[tabbarActive == 0? 'weui-bar__item_on' : '']" @click="handleTabBarRouter(0)">
-                <img src="~@/assets/images/tabbar/t1.png" alt="" class="weui-tabbar__icon">
-                <p class="weui-tabbar__label">参加</p>
+                <img src="~@/assets/images/tabbar/t3.png" alt="" class="weui-tabbar__icon">
+                <p class="weui-tabbar__label">首页</p>
             </div>
             <div class="weui-tabbar__item" :class="[tabbarActive == 1? 'weui-bar__item_on' : '']" @click="handleTabBarRouter(1)">
-                <img src="~@/assets/images/tabbar/t2.png" alt="" class="weui-tabbar__icon">
-                <p class="weui-tabbar__label">发布</p>
+                <img src="~@/assets/images/tabbar/t1.png" alt="" class="weui-tabbar__icon">
+                <p class="weui-tabbar__label">接单</p>
             </div>
             <div class="weui-tabbar__item" :class="[tabbarActive == 2? 'weui-bar__item_on' : '']" @click="handleTabBarRouter(2)">
-                <span style="display: inline-block;position: relative;">
-                    <img src="~@/assets/images/tabbar/t3.png" alt="" class="weui-tabbar__icon">
-                    <span class="weui-badge weui-badge_dot" style="position: absolute;top: 0;right: -6px;"></span>
-                </span>
-                <p class="weui-tabbar__label">附近</p>
+                <img src="~@/assets/images/tabbar/t2.png" alt="" class="weui-tabbar__icon">
+                <p class="weui-tabbar__label">发布</p>
             </div>
             <div  class="weui-tabbar__item" :class="[tabbarActive == 3? 'weui-bar__item_on' : '']" @click="handleTabBarRouter(3)">
                 <span style="display: inline-block;position: relative;">
@@ -71,10 +68,10 @@
                         this.$router.push({ path:`/`})
                         break;
                     case 1:
-                        this.$router.push({ path:`/release`})
+                        this.$router.push({ path:`/order`})
                         break;
                     case 2:
-                        this.$router.push({ path:`/nearby`})
+                        this.$router.push({ path:`/release`})
                         break;
                     case 3:
                         this.$router.push({ path:`/communicate`})

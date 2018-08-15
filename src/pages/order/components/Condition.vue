@@ -1,18 +1,7 @@
 <template>
     <div class="condition">
         <div class="weui-flex align-center">
-            <!-- <div class="condition-left" :class="[cityToggle ? 'condition-active' : '']" @click="handleConditionChoose('city')">
-                <div class="condition-region clearfix">
-                    <i class="iconfont fl">&#xe631;</i>
-                    <span class="fl tlie_1">广州市</span>
-                </div> 
-                <ul class="condition-ul no-scrollbar">
-                    <li><span>北京市</span></li>
-                    <li><span>北京市</span></li>
-                    <li><span>北京市</span></li>
-                    <li><span>北京市</span></li>
-                </ul>   
-            </div> -->
+            
             <div class="weui-flex__item">
                 <div class="condition-evel" style="line-height:13px;">
                     <i class="iconfont f20" style="top:2px;">&#xe62e;</i> 地图
@@ -155,13 +144,14 @@
             handleConditionChoose(_type){
                 if(this.conditionChooseType == _type) {
                     this.conditionChooseType = null; 
-                    this.$emit('change',this.conditionChooseType);
+                    this.$emit('change',null);
                 }else{
-                    this.conditionChooseType = _type
-                    if(this.conditionChooseType == 'screen'){
-                        this.$emit('change',this.conditionChooseType);
+                    if(_type == 'screen'){
                         this.conditionChooseType = null;
+                    }else{
+                        this.conditionChooseType = _type
                     }
+                    this.$emit('change',_type)
                 }
                 
             }

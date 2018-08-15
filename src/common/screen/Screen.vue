@@ -3,8 +3,10 @@
         <div class="screen_dialog">
             <div class="weui-mask transition" :class="{fadehide:!toggle}" @click="handleScreenClose"></div>
             <div class="weui-dialog transition" :class="{slideRight:!toggle}">
-                <div class="screen_wrapper">
-                    <slot name='container'></slot>
+                <div class="weui-dialog__bd">
+                    <div class="screen_wrapper">
+                        <slot name='container'></slot>
+                    </div>
                 </div>
                 <slot name='footer'></slot>
             </div>
@@ -34,16 +36,22 @@
         height: 100vh;
         top: 0;
         left: auto;
-        bottom:50px;
+        bottom:0;
         right:0;
         border-radius: 0;
         margin:0;
-        
+
+
     .screen_dialog .weui-dialog__bd
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 48px;
         padding:0;
-        height: 100%;
         overflow-y: auto;
         overflow-x: hidden;
+        -webkit-overflow-scrolling:touch;    /* 用于 ios5+ */  
     
     .screen_dialog .weui-dialog__ft
         position: absolute;

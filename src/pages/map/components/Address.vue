@@ -21,7 +21,7 @@
 <script> 
 
     export default {
-        name:'address',
+        name:'MapAddress',
         mounted(){
             let self = this;
             window.addEventListener('message', function(event){
@@ -30,7 +30,7 @@
                 if (location && location.module == 'locationPicker') {//防止其他应用也会向该页面post信息，需判断module是否为'locationPicker'
                     sessionStorage.location = JSON.stringify(location)
                     console.log(location)
-                    //this.$router.go(-1);
+                    //self.$router.go(-1);
                 }
             } , false);
         },
@@ -38,14 +38,7 @@
             
         },
         methods:{
-           handleLocationMessage(event) {
-                // 接收位置信息，用户选择确认位置点后选点组件会触发该事件，回传用户的位置信息
-                var location = event.data;
-                if (location && location.module == 'locationPicker') {//防止其他应用也会向该页面post信息，需判断module是否为'locationPicker'
-                    sessionStorage.location = JSON.stringify(location)
-                    this.$router.go(-1);
-                }
-            }
+           
         }
     } 
 

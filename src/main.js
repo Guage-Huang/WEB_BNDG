@@ -50,6 +50,23 @@ Vue.use(DatetimePlugin)
 Vue.use(AlertPlugin)
 Vue.use(WechatPlugin)
 
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title || '工匠云家'
+  store.commit('updateLoadingStatus', {isLoading: true})
+  if (!to.query.url && from.query.url) {
+      to.query.url = from.query.url
+  }
+  next()
+})
+
+router.afterEach(function (to) {
+  store.commit('updateLoadingStatus', {isLoading: false})
+})
+
+
+
+
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

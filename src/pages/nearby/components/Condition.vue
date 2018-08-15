@@ -9,12 +9,12 @@
                 <div class="weui-flex__item" :class="[conditionChooseType == 'comment' ? 'condition-active' : '']" @click="handleConditionChoose('comment')">
                     <div class="condition-evel">好评度<i class="iconfont" style="top:1px;">&#xe63b;</i></div>
                 </div>
-                <div class="weui-flex__item" :class="[conditionChooseType == 'project' ? 'condition-active' : '']" @click="handleConditionChoose('project')">
-                    <div class="condition-evel">擅长项目<i class="iconfont" style="top:1px;">&#xe63b;</i></div>
+                <div class="weui-flex__item" :class="[conditionChooseType == 'distance' ? 'condition-active' : '']" @click="handleConditionChoose('distance')">
+                    <div class="condition-evel">最近距离<i class="iconfont" style="top:1px;">&#xe63b;</i></div>
                 </div>
-                <div class="weui-flex__item" :class="[conditionChooseType == 'screen' ? 'condition-active' : '']" @click="handleConditionChoose('screen')">
+                <div class="weui-flex__item">
                     <div class="condition-evel">
-                        筛选 <i class="iconfont" style="top:1px;">&#xe74a;</i>
+                        <x-address title="" :show="regionShow" :raw-value="true"  v-model='region' :list="regionData" placeholder="区域" value-text-align="center" :popup-style="{zIndex:5003}" @on-shadow-change="handleRegionChoose" @on-show="handleRegionShow" @on-hide="handleRegionConfirm"></x-address>
                     </div>
                 </div>
             </div>
@@ -22,7 +22,60 @@
     </div>
 </template>
 
+
+<script>
+   
+    import {XAddress,ChinaAddressV4Data} from 'vux'
+    export default {
+        name: 'condition',
+        data(){
+            return {
+                conditionChooseType:null, //选择类型
+                region:[], //现居区域
+                regionData: ChinaAddressV4Data,
+                regionValue: [], //现居区域值
+                regionPrev:[],
+                regionShow: null,
+            }
+        },
+        components: {
+            XAddress,
+        },
+        methods:{
+            handleConditionChoose(_type){
+                if(this.conditionChooseType == _type){
+                    this.conditionChooseType = null;
+                    this.$emit('change',null);
+                }else{
+                    this.conditionChooseType = _type
+                    this.$emit('change',_type);
+                }
+                this.regionShow = false
+            },
+            //处理筛选区域选择
+            handleRegionChoose(region,value){
+                this.regionValue = value
+            },
+            handleRegionShow(){
+                this.regionShow = null;
+                this.conditionChooseType = null;
+            },
+            handleRegionConfirm(b){
+                this.regionShow = null;
+                if(b){
+                    if(this.regionPrev == this.regionValue) return;
+                    this.regionPrev = this.regionValue
+                    this.$emit('change',this.regionValue);
+                }
+            }
+        },
+    }
+</script>
+
+
+
 <style lang='stylus' scoped>
+    
     .stance
         overflow:hidden;
         position: relative;
@@ -141,35 +194,28 @@
         width: 0;
         height: 0;
     
+    .condition-evel>>>.weui-cell
+        padding:0;
+    
+    .condition-evel>>>.weui-cell .vux-popup-picker-select
+        height:20px;
+        line-height 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;	
+        
+
+    .condition-evel>>>.weui-cell .vux-cell-value
+        display: block;
+        font-size: .2rem;
+        //transform: scale(0.6);
+    .condition-evel>>>.weui-cell_access .weui-cell__ft:after
+        width: 4px;
+        height: 4px;
+        margin-top: -2px;
+        right: 5px;
+
 
 </style>
-
-<script>
-   
-    export default {
-        name: 'condition',
-        data(){
-            return {
-                cityToggle:false, //城市选择框是否显示
-                conditionChooseType:null, //选择类型
-            }
-        },
-        methods:{
-            handleConditionChoose(_type){
-                if(this.conditionChooseType == _type) {
-                    this.conditionChooseType = null; 
-                    this.$emit('change',this.conditionChooseType);
-                }else{
-                    this.conditionChooseType = _type
-                    if(this.conditionChooseType == 'screen'){
-                        this.$emit('change',this.conditionChooseType);
-                        this.conditionChooseType = null;
-                    }
-                }
-                
-            }
-        },
-        components:{
-        },
-    }
-</script>
